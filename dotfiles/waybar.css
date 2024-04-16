@@ -1,0 +1,107 @@
+@import "../colors/waybar.css";
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: FantasqueSansM Nerd Font;
+    font-weight: bold;
+    font-size: 16px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+#workspaces button {
+    padding: 5px;
+    color: @lblack;
+    margin-right: 5px;
+}
+
+/* workspaces button.active { */
+/*     color: @foreground; */
+/* } */
+
+/* #workspaces button.focused { */
+#workspaces button.active {
+    color: @foreground;
+    background: @background;
+    border-radius: 10px;
+}
+
+#workspaces button.urgent {
+    color: @red;
+    background: @red;
+    border-radius: 10px;
+}
+
+#workspaces button:hover {
+    color: @background;
+    background: @foreground;
+    border-radius: 10px;
+}
+
+#window,
+#clock,
+#battery,
+#pulseaudio,
+#workspaces,
+#tray,
+#cpu,
+#memory,
+#backlight {
+    background: @background;
+    padding: 0px 10px;
+    margin: 5px 0px;
+    margin-top: 5px;
+}
+
+#tray {
+    border-radius: 10px;
+    margin-right: 5px;
+}
+
+#workspaces {
+    border-radius: 10px;
+    margin-left: 5px;
+    padding-right: 0px;
+    padding-left: 5px;
+}
+
+#window {
+    color: @foreground;
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#clock {
+    color: @green;
+    border-radius: 10px 0px 0px 10px;
+    margin-left: 5px;
+}
+
+#cpu {
+    color: @yellow;	
+}
+
+#memory {
+    color: @blue;	
+}
+
+#battery {
+    color: @magenta;
+}
+
+#pulseaudio {
+    color: @cyan;
+    border-left: 0px;
+    border-right: 0px;
+}
+
+#pulseaudio.microphone {
+    color: @white;
+    margin-right: 5px;
+    border-radius: 0 10px 10px 0;
+}

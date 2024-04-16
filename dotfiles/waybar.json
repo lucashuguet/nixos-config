@@ -1,0 +1,104 @@
+{
+  "layer": "top",
+  "position": "top",
+  "exclusivt": true,
+  "passtrough": false,
+  "gtk-layer-shell": true,
+  "height": 0,
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-center": ["hyprland/window"],
+  "modules-right": [
+    "tray",
+    "clock",
+    "cpu",
+    "memory",
+	  "battery",
+    "pulseaudio",
+    "pulseaudio#microphone"
+  ],
+
+  "hyprland/window": {
+    "format": "{}"
+  },
+
+  "wlr/workspaces": {
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "all-outputs": true,
+    "on-click": "activate",
+    "format": "{icon}"
+  },
+
+  "battery": {
+    "bat": "BAT0",
+    "states": {
+      "full": 99,
+      "good": 98,
+      "normal": 98,
+      "warning": 20,
+      "critical": 20
+    },
+
+    "format": "{icon} {capacity}%",
+    "format-good": "{icon} {capacity}%", 
+    "format-full": "\uf240  {capacity}%",
+    "format-icons": ["\uf244 ", "\uf243 ", "\uf242 ", "\uf241 ", "\uf240 "],
+    "interval": 30
+  },
+
+  "cpu": {
+    "interval": 1,
+      "format": "\uf4bc  {}%",
+      "max-length": 10,
+      "on-click": ""
+  },
+
+  "memory": {
+    "interval": 30,
+    "format": "\udb80\udf5b {}%",
+    "max-length": 10
+  },
+
+  "tray": {
+    "icon-size": 13,
+    "tooltip": false,
+    "spacing": 10
+  },
+
+  "clock": {
+    "format": "{:\uf017 %R  \uf073 %d/%m}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "tooltip": false,
+    "format-muted": "\ueee8  Muted",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
+    "scroll-step": 5,
+    "format-icons": {
+      "headphone": "\udb80\udecb",
+      "hands-free": "\udb80\udecb",
+      "headset": "\udb80\udecb",
+      "phone": "\uf095",
+      "portable": "\uf095",
+      "car": "\uf1b9",
+      "default": ["\uf026", "\uf027", "\uf028"]
+    }
+  },
+
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "tooltip": false,
+    "format-source": "\uf130  {volume}%",
+    "format-source-muted": "\uf131  Muted",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-",
+    "scroll-step": 5
+  }
+}

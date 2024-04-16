@@ -1,0 +1,17 @@
+configuration {
+	modes: "window,drun,run,ssh";
+	font: "FantasqueSansM Nerd Font 16";
+	show-icons: true;
+	disable-history: true;
+	sort: true;
+  timeout {
+      action: "kb-cancel";
+      delay:  0;
+  }
+  filebrowser {
+      directories-first: true;
+      sorting-method:    "name";
+  }
+}
+
+@theme "theme"
